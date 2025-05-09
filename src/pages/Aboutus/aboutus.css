@@ -1,0 +1,31 @@
+.about-connect {
+  font-size: 1.875rem;
+  color: var(--color2);
+}
+
+.connect-icon {
+  width: 45px;
+  height: 45px;
+}
+
+.aboutme-text {
+  margin-top: 20px;
+  color: #4299e1;
+  font-size: 0.975rem;
+  text-transform: capitalize;
+  background: #1a365d;
+  padding: 10px;
+  width: fit-content;
+}
+
+.aboutme-title {
+  font-size: 2.25rem;
+  margin-top: 20px;
+  color: var(--color2);
+}
+
+.aboutme-description {
+  font-size: 1.125rem;
+  color: #cad2ff;
+  margin-top: 10px;
+}

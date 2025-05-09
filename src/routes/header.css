@@ -1,0 +1,155 @@
+.header {
+  background-color: var(--color1) !important;
+  color: var(--color2);
+  position: sticky;
+  top: 0;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  padding: 10px;
+  background: #cc0000;
+  background: linear-gradient(to bottom right, #cc0000 0%, #22b9ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Navigation styles */
+.nav-menu {
+  display: flex;
+}
+
+.nav-menu ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-menu li {
+  margin: 0 15px;
+  position: relative;
+}
+
+.nav-menu a {
+  color: var(--color2);
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.nav-menu a:hover {
+  color: var(--color3, #cccccc);
+}
+
+/* Underline hover effect */
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--color2);
+  transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+  width: 100%;
+}
+
+/* Hamburger styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  background: var(--color2);
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--color1);
+    transform: translateY(-100%);
+    transition: transform 0.3s ease, visibility 0.3s ease;
+    visibility: hidden;
+    flex-direction: column;
+  }
+
+  .nav-menu.active {
+    transform: translateY(0);
+    visibility: visible;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .nav-menu li {
+    margin: 10px 0;
+  }
+
+  .nav-menu a {
+    font-size: 20px;
+  }
+
+  .nav-menu a::after {
+    bottom: -4px;
+  }
+}
+
+/* Desktop override */
+@media (min-width: 769px) {
+  .nav-menu {
+    display: flex !important;
+    transform: none !important;
+    visibility: visible !important;
+    position: static;
+    background: transparent;
+  }
+}
